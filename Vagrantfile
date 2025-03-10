@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "db" do |db|
     db.vm.box = "ubuntu/bionic64"
     db.vm.network "private_network", ip: "192.168.56.11"  # Статична IP-адреса
-    db.vm.network "forwarded_port", guest: 3306, host: 3306  # Переадресація порту 3306 → 3306
+    db.vm.network "forwarded_port", guest: 3306, host: 13306
     db.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
       vb.cpus = 2
